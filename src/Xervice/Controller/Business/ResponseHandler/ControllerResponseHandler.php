@@ -5,9 +5,7 @@ declare(strict_types=1);
 namespace Xervice\Controller\Business\ResponseHandler;
 
 
-use Symfony\Component\HttpFoundation\Request;
 use Xervice\Controller\Business\Exception\ControllerException;
-use Xervice\Core\Factory\FactoryInterface;
 use Xervice\Core\Locator\AbstractWithLocator;
 use Xervice\Web\Business\Executor\ResponseHandler\ResponseHandlerInterface;
 
@@ -53,7 +51,7 @@ class ControllerResponseHandler extends AbstractWithLocator implements ResponseH
         return array_filter(
             $response,
             function ($value) {
-                return 0 !== strpos($value, '_');
+                return $value{0} !== '_';
             },
             ARRAY_FILTER_USE_KEY
         );
