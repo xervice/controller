@@ -9,6 +9,8 @@ use Xervice\Web\Business\Provider\RouteProvider;
 use Xervice\Web\WebFacade;
 use XerviceTest\Controller\Routing\TestProvider;
 
+require_once __DIR__ . '/Injection/WebFactory.php';
+
 class IntegrationTest extends \Codeception\Test\Unit
 {
     /**

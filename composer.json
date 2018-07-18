@@ -22,8 +22,7 @@
       "DataProvider\\": "src/Generated/"
     },
     "psr-0": {
-      "Xervice\\": "src/",
-      "App\\": "src/"
+      "Xervice\\": "src/"
     }
   }
 }

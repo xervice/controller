@@ -4,7 +4,6 @@
 namespace Xervice\Controller\Business\Route;
 
 
-use DataProvider\ControllerRouteDataProvider;
 use DataProvider\RouteDataProvider;
 use Xervice\Web\Business\Plugin\AbstractWebProviderPlugin;
 
