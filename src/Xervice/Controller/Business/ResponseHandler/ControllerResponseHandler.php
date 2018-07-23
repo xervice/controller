@@ -28,6 +28,9 @@ class ControllerResponseHandler extends AbstractWithLocator implements ResponseH
         $this->validateController($controllerName);
 
         $controller = new $controllerName();
+        if (method_exists($controller, 'setKernel')) {
+            $controller->setKernel($this->getFactory()->createKernelBridge());
+        }
 
         $this->validateAction($controller, $action, $controllerName);
 
