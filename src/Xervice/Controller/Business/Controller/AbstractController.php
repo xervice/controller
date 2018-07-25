@@ -9,7 +9,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Xervice\Controller\Business\Provider\KernelBridgeInterface;
 use Xervice\Core\Locator\AbstractWithLocator;
 use Xervice\Kernel\Business\Service\ClearServiceInterface;
-use Xervice\Kernel\Business\Service\ServiceInterface;
 
 abstract class AbstractController extends AbstractWithLocator
 {
