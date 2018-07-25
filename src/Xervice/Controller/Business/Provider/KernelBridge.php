@@ -4,7 +4,7 @@
 namespace Xervice\Controller\Business\Provider;
 
 
-use Xervice\Kernel\Business\Service\ServiceInterface;
+use Xervice\Kernel\Business\Service\ClearServiceInterface;
 
 class KernelBridge implements KernelBridgeInterface
 {
@@ -26,9 +26,9 @@ class KernelBridge implements KernelBridgeInterface
     /**
      * @param string $serviceName
      *
-     * @return \Xervice\Kernel\Business\Service\ServiceInterface
+     * @return \Xervice\Kernel\Business\Service\ClearServiceInterface
      */
-    public function getService(string $serviceName): ServiceInterface
+    public function getService(string $serviceName): ClearServiceInterface
     {
         return $this->kernelFacade->getService($serviceName);
     }
