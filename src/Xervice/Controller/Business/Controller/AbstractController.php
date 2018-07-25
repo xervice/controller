@@ -8,6 +8,7 @@ namespace Xervice\Controller\Business\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Xervice\Controller\Business\Provider\KernelBridgeInterface;
 use Xervice\Core\Locator\AbstractWithLocator;
+use Xervice\Kernel\Business\Service\ClearServiceInterface;
 use Xervice\Kernel\Business\Service\ServiceInterface;
 
 abstract class AbstractController extends AbstractWithLocator
@@ -28,9 +29,9 @@ abstract class AbstractController extends AbstractWithLocator
     /**
      * @param string $serviceName
      *
-     * @return \Xervice\Kernel\Business\Service\ServiceInterface
+     * @return \Xervice\Kernel\Business\Service\ClearServiceInterface
      */
-    protected function getService(string $serviceName): ServiceInterface
+    protected function getService(string $serviceName): ClearServiceInterface
     {
         return $this->kernel->getService($serviceName);
     }
