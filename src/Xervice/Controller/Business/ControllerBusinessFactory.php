@@ -2,24 +2,22 @@
 declare(strict_types=1);
 
 
-namespace Xervice\Controller;
+namespace Xervice\Controller\Business;
 
 
 use Symfony\Component\HttpFoundation\Request;
-use Xervice\Controller\Business\Output\OutputProcessor;
-use Xervice\Controller\Business\Output\OutputProcessorInterface;
-use Xervice\Controller\Business\Provider\KernelBridge;
-use Xervice\Controller\Business\Provider\KernelBridgeInterface;
-use Xervice\Core\Factory\AbstractFactory;
-use Xervice\Kernel\KernelFacade;
+use Xervice\Controller\Business\Model\Output\OutputProcessor;
+use Xervice\Controller\Business\Model\Output\OutputProcessorInterface;
+use Xervice\Controller\Business\Model\Provider\KernelBridge;
+use Xervice\Controller\Business\Model\Provider\KernelBridgeInterface;
+use Xervice\Controller\ControllerDependencyProvider;
+use Xervice\Core\Business\Model\Factory\AbstractBusinessFactory;
+use Xervice\Kernel\Business\KernelFacade;
 
-/**
- * @method \Xervice\Controller\ControllerConfig getConfig()
- */
-class ControllerFactory extends AbstractFactory
+class ControllerBusinessFactory extends AbstractBusinessFactory
 {
     /**
-     * @return \Xervice\Controller\Business\Output\OutputProcessorInterface
+     * @return \Xervice\Controller\Business\Model\Output\OutputProcessorInterface
      */
     public function createOutputProcessor(): OutputProcessorInterface
     {
@@ -35,7 +33,7 @@ class ControllerFactory extends AbstractFactory
     }
 
     /**
-     * @return \Xervice\Controller\Business\Provider\KernelBridgeInterface
+     * @return \Xervice\Controller\Business\Model\Provider\KernelBridgeInterface
      */
     public function createKernelBridge(): KernelBridgeInterface
     {
@@ -45,7 +43,7 @@ class ControllerFactory extends AbstractFactory
     }
 
     /**
-     * @return \Xervice\Kernel\KernelFacade
+     * @return \Xervice\Kernel\Business\KernelFacade
      */
     public function getKernelFacade(): KernelFacade
     {

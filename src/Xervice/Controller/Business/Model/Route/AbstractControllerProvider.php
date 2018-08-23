@@ -2,11 +2,11 @@
 declare(strict_types=1);
 
 
-namespace Xervice\Controller\Business\Route;
+namespace Xervice\Controller\Business\Model\Route;
 
 
 use DataProvider\RouteDataProvider;
-use Xervice\Web\Business\Plugin\AbstractWebProviderPlugin;
+use Xervice\Web\Business\Dependency\Plugin\AbstractWebProviderPlugin;
 
 abstract class AbstractControllerProvider extends AbstractWebProviderPlugin
 {

@@ -2,23 +2,23 @@
 declare(strict_types=1);
 
 
-namespace Xervice\Controller\Business\Controller;
+namespace Xervice\Controller\Communication\Controller;
 
 
 use Symfony\Component\HttpFoundation\Response;
-use Xervice\Controller\Business\Provider\KernelBridgeInterface;
-use Xervice\Core\Locator\AbstractWithLocator;
-use Xervice\Kernel\Business\Service\ClearServiceInterface;
+use Xervice\Controller\Business\Model\Provider\KernelBridgeInterface;
+use Xervice\Core\Plugin\AbstractCommunicationPlugin;
+use Xervice\Kernel\Business\Plugin\ClearServiceInterface;
 
-abstract class AbstractController extends AbstractWithLocator
+abstract class AbstractController extends AbstractCommunicationPlugin
 {
     /**
-     * @var \Xervice\Controller\Business\Provider\KernelBridgeInterface
+     * @var \Xervice\Controller\Business\Model\Provider\KernelBridgeInterface
      */
     private $kernel;
 
     /**
-     * @param \Xervice\Controller\Business\Provider\KernelBridgeInterface $kernel
+     * @param \Xervice\Controller\Business\Model\Provider\KernelBridgeInterface $kernel
      */
     public function setKernel(KernelBridgeInterface $kernel): void
     {
@@ -28,9 +28,9 @@ abstract class AbstractController extends AbstractWithLocator
     /**
      * @param string $serviceName
      *
-     * @return \Xervice\Kernel\Business\Service\ClearServiceInterface
+     * @return \Xervice\Kernel\Business\Plugin\ClearServiceInterface|null
      */
-    protected function getService(string $serviceName): ClearServiceInterface
+    protected function getService(string $serviceName): ?ClearServiceInterface
     {
         return $this->kernel->getService($serviceName);
     }

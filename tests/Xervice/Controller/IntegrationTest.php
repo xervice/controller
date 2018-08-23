@@ -2,14 +2,14 @@
 
 namespace XerviceTest\Controller;
 
-use Xervice\Core\Locator\Locator;
-use Xervice\Routing\RoutingFacade;
-use Xervice\Web\Business\Plugin\PluginCollection;
-use Xervice\Web\Business\Provider\RouteProvider;
-use Xervice\Web\WebFacade;
+use Xervice\Core\Business\Model\Locator\Locator;
+use Xervice\Routing\Business\RoutingFacade;
+use Xervice\Web\Business\Dependency\Plugin\PluginCollection;
+use Xervice\Web\Business\Model\Provider\RouteProvider;
+use Xervice\Web\Business\WebFacade;
 use XerviceTest\Controller\Routing\TestProvider;
 
-require_once __DIR__ . '/Injection/WebFactory.php';
+require_once __DIR__ . '/Injection/WebBusinessFactory.php';
 
 class IntegrationTest extends \Codeception\Test\Unit
 {
@@ -139,7 +139,7 @@ class IntegrationTest extends \Codeception\Test\Unit
     }
 
     /**
-     * @return \Xervice\Web\WebFacade
+     * @return \Xervice\Web\Business\WebFacade
      */
     private function getWebFacade(): WebFacade
     {

@@ -5,7 +5,7 @@ namespace XerviceTest\Controller\Routing;
 
 
 use DataProvider\RouteCollectionDataProvider;
-use Xervice\Controller\Business\Route\AbstractControllerProvider;
+use Xervice\Controller\Business\Model\Route\AbstractControllerProvider;
 use XerviceTest\Controller\Controller\TestController;
 
 class TestProvider extends AbstractControllerProvider

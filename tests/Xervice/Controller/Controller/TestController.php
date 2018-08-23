@@ -6,7 +6,7 @@ namespace XerviceTest\Controller\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Xervice\Controller\Business\Controller\AbstractController;
+use Xervice\Controller\Communication\Controller\AbstractController;
 
 class TestController extends AbstractController
 {

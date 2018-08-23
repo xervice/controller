@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 
-namespace Xervice\Controller\Business\Output;
+namespace Xervice\Controller\Business\Model\Output;
 
 
 use Symfony\Component\HttpFoundation\Response;

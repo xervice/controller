@@ -2,22 +2,20 @@
 declare(strict_types=1);
 
 
-namespace Xervice\Controller\Business\ResponseHandler;
-
-
+namespace Xervice\Controller\Business\Model\ResponseHandler;
 use Xervice\Controller\Business\Exception\ControllerException;
-use Xervice\Core\Locator\AbstractWithLocator;
-use Xervice\Web\Business\Executor\ResponseHandler\ResponseHandlerInterface;
+use Xervice\Core\Plugin\AbstractBusinessPlugin;
+use Xervice\Web\Business\Model\Executor\ResponseHandler\ResponseHandlerInterface;
+
 
 /**
- * @method \Xervice\Controller\ControllerFactory getFactory()
+ * @method \Xervice\Controller\Business\ControllerBusinessFactory getFactory()
  */
-class ControllerResponseHandler extends AbstractWithLocator implements ResponseHandlerInterface
+class ControllerResponseHandler extends AbstractBusinessPlugin implements ResponseHandlerInterface
 {
     /**
      * @param mixed $response
      *
-     * @throws \Core\Locator\Dynamic\ServiceNotParseable
      * @throws \Xervice\Controller\Business\Exception\ControllerException
      */
     public function handleResponse($response): void
@@ -61,11 +59,11 @@ class ControllerResponseHandler extends AbstractWithLocator implements ResponseH
     }
 
     /**
-     * @param $controllerName
+     * @param string $controllerName
      *
      * @throws \Xervice\Controller\Business\Exception\ControllerException
      */
-    private function validateController($controllerName): void
+    private function validateController(string $controllerName): void
     {
         if (!class_exists($controllerName)) {
             throw new ControllerException(
@@ -78,13 +76,13 @@ class ControllerResponseHandler extends AbstractWithLocator implements ResponseH
     }
 
     /**
-     * @param $controller
-     * @param $action
-     * @param $controllerName
+     * @param mixed $controller
+     * @param string $action
+     * @param string $controllerName
      *
      * @throws \Xervice\Controller\Business\Exception\ControllerException
      */
-    private function validateAction($controller, $action, $controllerName): void
+    private function validateAction($controller, string $action, string $controllerName): void
     {
         if (!method_exists($controller, $action)) {
             throw new ControllerException(
